@@ -1,3 +1,4 @@
+import { NavbarComponent } from './../navbar/navbar.component';
 import { Component, Input, OnInit } from '@angular/core';
 import { CountryService } from './service/country.service';
 import { Country } from '../core/models/country.model';
@@ -17,14 +18,21 @@ export class CountryComponent implements OnInit {
   }
 
   getAllContrys() {
-    this.service.GetCountryByCod().subscribe((data) => {
-      for (const pais of data) {
+    this.service.GetCountryByCod().subscribe((data: any) => {
 
-        if (!this.dataCountry.region.includes(pais.region)) {
-          this.dataCountry.region.push(pais.region);
-        }
-      }
+      this.dataCountry.data = data.slice(0, 10)
+
+      this.filterRegions();
     });
   }
-  
+
+  filterRegions() {
+    for (const country of this.dataCountry.data) {
+      if (!this.dataCountry.region.includes(country.region)) {
+        this.dataCountry.region.push(country.region);
+      }
+    }
+    this.dataCountry.region.map((region) => {});
+    this.dataCountry.data.map((country) => {});
+  }
 }

@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [AppComponent, NavbarComponent, CountryComponent, CountryFilterComponent, CountryCardComponent ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule,MatButtonModule , MatInputModule, MatSelectModule,MatCardModule,MatInputModule, HttpClientModule ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule , MatInputModule, MatSelectModule,MatInputModule, MatCardModule,MatButtonModule, HttpClientModule ],
   providers: [],
   bootstrap: [AppComponent],
 })
