@@ -11,10 +11,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { CountryCardComponent } from './country/country-card/country-card.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [AppComponent, NavbarComponent, CountryComponent, CountryFilterComponent, CountryCardComponent ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule,MatButtonModule , MatInputModule, MatSelectModule,HttpClientModule ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule,MatButtonModule , MatInputModule, MatSelectModule,MatCardModule,MatInputModule, HttpClientModule ],
   providers: [],
   bootstrap: [AppComponent],
 })

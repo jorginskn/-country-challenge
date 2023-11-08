@@ -1,17 +1,14 @@
-<div class="bg-black h-15 text-white p-4 rounded-none  flex justify-between">
+<div class="bg-Very-Dark-Black h-15 text-white p-4 rounded-none  flex justify-between">
   <mat-form-field>
     <input   matInput placeholder="Search for a country...">
   </mat-form-field>
   <mat-form-field>
-    <mat-label>Filter by Region</mat-label>
+    <mat-label>Favorite food</mat-label>
     <mat-select>
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
+      <mat-option *ngFor="let region of dataCountry.region;" [value]="region">
+            {{region}}
+      </mat-option>
     </mat-select>
   </mat-form-field>
-</div>
-<div class="bg-var(--Dark-Blue)">
 
 </div>

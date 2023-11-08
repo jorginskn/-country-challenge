@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CountryService } from './service/country.service';
+import { Country } from '../core/models/country.model';
 
 @Component({
   selector: 'app-country',
@@ -7,18 +8,23 @@ import { CountryService } from './service/country.service';
   styleUrls: ['./country.component.css'],
 })
 export class CountryComponent implements OnInit {
+  dataCountry: Country = new Country();
 
-  constructor(private service: CountryService) {
+  constructor(private service: CountryService) {}
 
-
-  }
   ngOnInit(): void {
-    this.getAllContrys()
+    this.getAllContrys();
   }
 
   getAllContrys() {
     this.service.GetCountryByCod().subscribe((data) => {
-      console.log(data)
-    })
+      for (const pais of data) {
+
+        if (!this.dataCountry.region.includes(pais.region)) {
+          this.dataCountry.region.push(pais.region);
+        }
+      }
+    });
   }
+  
 }

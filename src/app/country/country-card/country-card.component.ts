@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-country-card',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./country-card.component.css']
 })
 export class CountryCardComponent {
-
+      @Input() dataCountry: any
 }
