@@ -10,18 +10,14 @@ import { CountryService } from '../service/country.service';
 })
 export class CountryCardComponent implements OnInit {
   @Input() dataCountry: any;
+  mostrarItens: boolean = true;
+  constructor(private router: Router, private service: CountryService) {}
+  ngOnInit(): void {}
 
-
-  constructor(private router: Router, private service: CountryService) {
-
-
-  }
-  ngOnInit(): void {
-   }
-
-   handleEvent(id: string) {
+  handleEvent(id: string) {
     this.router.navigate(['country/' + id]);
-
   }
- 
+  alternarVisibilidade() {
+    this.mostrarItens = !this.mostrarItens;
+  }
 }

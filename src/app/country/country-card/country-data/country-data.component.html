@@ -1,2 +1,44 @@
+<div class="bg-white">
+  <app-navbar class="">
+  </app-navbar>
+  <div>
+    <div class="h-60 px-28 py-32 bg-red-600" mat-z-elevation>
+      <button mat-button routerLink="/home" class="w-32 h-full bg-red-600">
+        <mat-icon class="bg-red-600">home</mat-icon>
+        Ir para Home
+      </button>
+    </div>
+    <div class="px-40 flex flex-col   pb-40" *ngFor="let data of dataCountry">
+      <div class="grid grid-cols-2">
+        <div class="w-[500px] h-[900px]">
+          <img src="{{data.flags.svg}}" class="" alt="">
+        </div>
+        <div class="flex flex-col gap-10 px-24">
+          <h1 class=" font-bold">{{data.name.common}}</h1>
+          <div class="grid grid-cols-2 w-96">
+            <div class="font-bold">Native Name: {{data.name.official}}</div>
+            <div class="font-bold">Top level Domain:</div>
+          </div>
+          <div class="grid grid-cols-2 w-96">
+            <div class="font-bold">Population: {{data.population}}</div>
+            <div class="font-bold">Currencies: {{text}}</div>
+          </div>
+          <div class="grid grid-cols-2 w-96">
+            <div class="font-bold">Region :{{data.region}}</div>
+            <div class="font-bold">Languages: {{data.languages.eng}}</div>
+          </div>
+          <div class="grid grid-cols-2 w-96">
+            <div class="font-bold">Sub-region :{{data.subregion}}</div>
+          </div>
+          <div class="grid grid-cols-2 w-60">
+            <div class="font-bold">Capital :{{data.capital}}</div>
+          </div>
 
-
+          <div class="flex flex-row gap-10 col-span-2 border-[3px]">
+            <div class="inline-block font-bold ">Border countries: </div>
+            <div class=" inline-block ">ALEMANHA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

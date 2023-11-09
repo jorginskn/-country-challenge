@@ -2,6 +2,7 @@ import { NavbarComponent } from './../navbar/navbar.component';
 import { Component, Input, OnInit } from '@angular/core';
 import { CountryService } from './service/country.service';
 import { Country } from '../core/models/country.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-country',
@@ -11,7 +12,7 @@ import { Country } from '../core/models/country.model';
 export class CountryComponent implements OnInit {
   dataCountry: Country = new Country();
 
-  constructor(private service: CountryService) {}
+  constructor(private service: CountryService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.getAllContrys();
@@ -26,6 +27,12 @@ export class CountryComponent implements OnInit {
     });
   }
 
+
+  isRotaExibir(): boolean {
+    // Verifica se a rota atual contém "rota-exibir"
+    return this.route.snapshot.url.some(segment => segment.path === '/home');
+  }
+  
   filterRegions() {
     for (const country of this.dataCountry.data) {
       if (!this.dataCountry.region.includes(country.region)) {

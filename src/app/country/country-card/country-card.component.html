@@ -2,7 +2,7 @@
   <div class="flex  flex-wrap bg-Very-Dark-Black gap-10 justify-center">
     <ng-container *ngFor="let card of dataCountry.data">
       <div
-        class="w-10/12 md:w-3/12 lg:h-full lg:w-2/12    bg-Very-Dark-Blue  mb-4 rounded-lg shadow-lg  cursor-pointer hover:ring-4 hover:ring-slate-600"(meuEvento)="handleMeuEvento($event)" (click)="handleEvent(card.ccn3)">
+        class="w-10/12 md:w-3/12 lg:h-full lg:w-2/12    bg-Very-Dark-Blue  mb-4 rounded-lg shadow-lg  cursor-pointer hover:ring-4 hover:ring-slate-600"  (click)="handleEvent(card.ccn3)">
         <img class="  w-full flex-1 sm:w-[1000px]  md:w-full lg:w-full  lg:h-[150px] object-cover rounded-t-lg"
           [src]="card.flags.svg" alt="Flag Image">
         <div class="p-4 flex flex-col ">
@@ -13,5 +13,4 @@
       </div>
     </ng-container>
   </div>
-  <app-country-data [dataCountry]="dataCountry" ></app-country-data>
 </div>

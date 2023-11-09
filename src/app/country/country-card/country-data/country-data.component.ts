@@ -8,13 +8,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./country-data.component.css'],
 })
 export class CountryDataComponent implements OnInit {
-  @Input() dataCountry: any;
+  dataCountry: any[] = [];
   id: any;
-  mostrarItens: boolean = true
+  mostrarItens: boolean = true;
+  text: string = ''
   constructor(private service: CountryService, private route: ActivatedRoute) {}
+
   ngOnInit(): void {
     this.getParamId();
   }
+
   getParamId() {
     this.route.paramMap.subscribe((params) => {
       let paramId = params.get('id');
@@ -26,8 +29,8 @@ export class CountryDataComponent implements OnInit {
   getCountriesById() {
     this.service.GetCountryByCode(this.id).subscribe((data) => {
       this.dataCountry = data;
-      console.log(data.name)
+      console.log(this.dataCountry)
+     this.text = data[0].currencies.TWD.name
     });
   }
-
 }
