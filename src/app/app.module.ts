@@ -12,9 +12,13 @@ import {MatSelectModule} from '@angular/material/select';
 import { CountryCardComponent } from './country/country-card/country-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
+
+import {MatIconModule} from '@angular/material/icon';
+import { CountryDataComponent } from './country/country-card/country-data/country-data.component';
+
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, CountryComponent, CountryFilterComponent, CountryCardComponent ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule , MatInputModule, MatSelectModule,MatInputModule, MatCardModule,MatButtonModule, HttpClientModule ],
+  declarations: [AppComponent, NavbarComponent, CountryComponent, CountryFilterComponent, CountryCardComponent, CountryDataComponent ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule , MatInputModule, MatSelectModule,MatInputModule, MatCardModule,MatButtonModule, HttpClientModule,MatIconModule ],
   providers: [],
   bootstrap: [AppComponent],
 })

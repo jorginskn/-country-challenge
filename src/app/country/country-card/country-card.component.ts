@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Country } from 'src/app/core/models/country.model';
+import { CountryService } from '../service/country.service';
 
 @Component({
   selector: 'app-country-card',
@@ -9,18 +11,17 @@ import { Country } from 'src/app/core/models/country.model';
 export class CountryCardComponent implements OnInit {
   @Input() dataCountry: any;
 
+
+  constructor(private router: Router, private service: CountryService) {
+
+
+  }
   ngOnInit(): void {
-    this.getNameCountry();
-  }
+   }
 
-  getNameCountry() {
+   handleEvent(id: string) {
+    this.router.navigate(['country/' + id]);
 
-    if (
-      this.dataCountry.data &&
-      Array.isArray(this.dataCountry.data) &&
-      this.dataCountry.data.length >= 249
-    ) {
-      this.dataCountry.data = this.dataCountry.data.slice(0, 249);
-    }
   }
+ 
 }

@@ -1,28 +1,17 @@
-<div class="bg-Very-Dark-Blue p-4 flex flex-wrap   min-w-6xl h-max">
-  <ng-container *ngFor="let card of dataCountry.data">
-    <div class="w-60 max-h-80 bg-white text-very-dark-blue mx-2 mb-4 rounded-lg shadow-lg flex flex-wrap">
-      <img class="w-full h-40 object-cover rounded-t-lg" [src]="card.flags.svg" alt="Flag Image">
-      <div class="p-4 flex flex-col">
-        <h2 class="text-very-dark-blue text-lg font-semibold">{{card.name.common}}</h2>
-        <p class="text-very-dark-blue"><strong>Capital:</strong>{{card.capital}}</p>
-        <p class="text-very-dark-blue"><strong> Population:</strong>{{card.population}}</p>
+<div class="bg-Very-Dark-Black lg:h-full  lg:w-full ">
+  <div class="flex  flex-wrap bg-Very-Dark-Black gap-10 justify-center">
+    <ng-container *ngFor="let card of dataCountry.data">
+      <div
+        class="w-10/12 md:w-3/12 lg:h-full lg:w-2/12    bg-Very-Dark-Blue  mb-4 rounded-lg shadow-lg  cursor-pointer hover:ring-4 hover:ring-slate-600"(meuEvento)="handleMeuEvento($event)" (click)="handleEvent(card.ccn3)">
+        <img class="  w-full flex-1 sm:w-[1000px]  md:w-full lg:w-full  lg:h-[150px] object-cover rounded-t-lg"
+          [src]="card.flags.svg" alt="Flag Image">
+        <div class="p-4 flex flex-col ">
+          <h2 class="text-violet-50 text-lg font-semibold">{{card.name.common}}</h2>
+          <p class="text-violet-50 text-base text-2 font-bold"> Capital: {{card.capital}}</p>
+          <p class="text-violet-50 font-bold"> Population: {{card.population}}</p>
+        </div>
       </div>
-    </div>
-  </ng-container>
+    </ng-container>
+  </div>
+  <app-country-data [dataCountry]="dataCountry" ></app-country-data>
 </div>
-
-
-
-
-
-
-<!--  <mat-card-header class="bg-Dark-Gray">
-    <mat-card-title>{{card.name.common}}</mat-card-title>
-    <mat-card-title>{{card.capital}}</mat-card-title>
-    <mat-card-title>{{card.capital}}</mat-card-title>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card-header>
-</mat-card> -->

@@ -1,12 +1,18 @@
-<div class="bg-Very-Dark-Black h-15 text-white p-4 rounded-none  flex justify-between">
+<div
+  class="bg-Very-Dark-Black h-15 text-white px-28 min-w- py-9 min-w-[680px] rounded-none   flex justify-between  min-w-550  ">
   <mat-form-field>
-    <input   matInput placeholder="Search for a country...">
+    <div class="flex ">
+      <input class="w-[75px] mat-accent" (input)="getDigitizedValue($event)" matInput
+        placeholder="Search for a country..." formControlName="countryName">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" class="cursor-pointer" fontIcon="search"
+        (click)="getDigitizedValue($event)"> </mat-icon>
+    </div>
   </mat-form-field>
   <mat-form-field>
-    <mat-label>Favorite food</mat-label>
-    <mat-select>
+    <mat-label>filter by region</mat-label>
+    <mat-select (selectionChange)="getCountrySelectRegion($event.value)">
       <mat-option *ngFor="let region of dataCountry.region;" [value]="region">
-            {{region}}
+        {{region}}
       </mat-option>
     </mat-select>
   </mat-form-field>
