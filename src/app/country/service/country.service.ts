@@ -8,8 +8,11 @@ import { Observable } from 'rxjs';
 export class CountryService {
   constructor(private http: HttpClient) {}
 
-  GetCountryByCod(): Observable<any> {
+  GetAllCountries(): Observable<any> {
     return this.http.get('https://restcountries.com/v3.1/all');
+  }
+  GetCountryByCode(id: string): Observable<any> {
+    return this.http.get(`https://restcountries.com/v3.1/alpha?codes=${id}`);
   }
 
   getCountriesByRegion(region: string): Observable<any> {

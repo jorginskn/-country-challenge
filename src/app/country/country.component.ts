@@ -18,7 +18,7 @@ export class CountryComponent implements OnInit {
   }
 
   getAllContrys() {
-    this.service.GetCountryByCod().subscribe((data: any) => {
+    this.service.GetAllCountries().subscribe((data: any) => {
 
       this.dataCountry.data = data.slice(0, 10)
 
