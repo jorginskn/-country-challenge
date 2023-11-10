@@ -17,7 +17,5 @@ export class CountryCardComponent implements OnInit {
   handleEvent(id: string) {
     this.router.navigate(['country/' + id]);
   }
-  alternarVisibilidade() {
-    this.mostrarItens = !this.mostrarItens;
-  }
+
 }

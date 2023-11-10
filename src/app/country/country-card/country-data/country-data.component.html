@@ -13,9 +13,9 @@
         <img src="{{data.flags.svg}}" class="w-96 sm:w-96 max-w-sm " alt="">
       </div>
       <div class=" ">
-        <h1 class="font-poppins text-lg font-bold text-violet-50">{{data.name.common}}</h1>
+        <h1 class="font-bold !font-nunito  !text-[60px] text-violet-50 ">{{ data.name.common }}</h1>
         <div class=" ">
-          <div class="font-bold text-lg text-violet-50">Native Name: {{data.name.official}}</div>
+          <div class="font-bold text-lg text-violet-50 fw-">Native Name: {{data.name.official}}</div>
           <div class="font-bold text-lg text-violet-50">Top level Domain:</div>
         </div>
         <div class=" ">
@@ -35,8 +35,14 @@
 
         <div class="flex flex-row gap-10 col-span-2">
           <div class="inline-block font-bold text-lg text-violet-50 ">Border countries: </div>
-          <div class=" inline-block font-bold border-2 text-lg bg-slate-500 rounded-[10px] p-2 cursor-pointer"
-            (click)="hireMe()">Brasil</div>
+          <div
+            class=" shadow-md inline-block font-bold  text-lg bg-slate-500 rounded-[10px] py-5 px-14 cursor-pointer gap-10"
+            (click)="hireMe()">
+
+
+            {{data.borders}}
+
+          </div>
         </div>
       </div>
     </div>

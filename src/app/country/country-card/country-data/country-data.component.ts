@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CountryDataComponent implements OnInit {
   dataCountry: any[] = [];
+  borders: any[] = [];
   id: any;
   text: string = '';
   constructor(private service: CountryService, private route: ActivatedRoute) {}
@@ -28,10 +29,12 @@ export class CountryDataComponent implements OnInit {
   getCountriesById() {
     this.service.GetCountryByCode(this.id).subscribe((data) => {
       this.dataCountry = data;
-      this.text = data[0].currencies.TWD.name;
+        console.log(data.borders)
     });
   }
+
   hireMe(){
     alert('Me contrata aí cara')
   }
+
 }
