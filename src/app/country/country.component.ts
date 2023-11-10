@@ -22,8 +22,8 @@ export class CountryComponent implements OnInit {
     this.service.GetAllCountries().subscribe((data: any) => {
 
       this.dataCountry.data = data.slice(0, 10)
-
       this.filterRegions();
+
     });
   }
 
@@ -32,7 +32,7 @@ export class CountryComponent implements OnInit {
     // Verifica se a rota atual contém "rota-exibir"
     return this.route.snapshot.url.some(segment => segment.path === '/home');
   }
-  
+
   filterRegions() {
     for (const country of this.dataCountry.data) {
       if (!this.dataCountry.region.includes(country.region)) {

@@ -29,7 +29,6 @@ export class CountryDataComponent implements OnInit {
   getCountriesById() {
     this.service.GetCountryByCode(this.id).subscribe((data) => {
       this.dataCountry = data;
-        console.log(data.borders)
     });
   }
 
