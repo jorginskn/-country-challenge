@@ -10,8 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CountryDataComponent implements OnInit {
   dataCountry: any[] = [];
   id: any;
-  mostrarItens: boolean = true;
-  text: string = ''
+  text: string = '';
   constructor(private service: CountryService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -29,8 +28,10 @@ export class CountryDataComponent implements OnInit {
   getCountriesById() {
     this.service.GetCountryByCode(this.id).subscribe((data) => {
       this.dataCountry = data;
-      console.log(this.dataCountry)
-     this.text = data[0].currencies.TWD.name
+      this.text = data[0].currencies.TWD.name;
     });
+  }
+  hireMe(){
+    alert('Me contrata aí cara')
   }
 }

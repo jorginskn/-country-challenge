@@ -31,7 +31,6 @@ export class CountryFilterComponent implements OnInit {
     this.service.getCountriesByRegion(state).subscribe((data) => {
       this.dataCountry.data = data;
       this.dataCountry.data.splice(0, 15);
-      console.log(this.dataCountry.data);
     });
   }
 
