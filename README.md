@@ -1,27 +1,30 @@
-# CountriesChallenger
+# Country Challenger
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+<p align="center">
+<img src="./src/assets/Country.PNG" alt="Countries Image  https://country-challenge-seven.vercel.app/home" style="width:400px;"/>
+</p>
 
-## Development server
+<
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## ATENÇÃO: `Código Inicial do Desafio `
 
-## Code scaffolding
+Se você deseja acessar o repositório vai iniciar o projeto desde o início, você deve fazer um clone da branch `master`. Lá estará presente toda a parte estrutural, as funções .
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A versão completa do código encontra-se na branch `master`
 
-## Build
+## Como iniciar o projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Dentro do diretório principal, você pode executar:
 
-## Running unit tests
+### `npm install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Instala todas as dependências do projeto dentro da pasta "node_modules"
 
-## Running end-to-end tests
+### `npm start`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Inicia a aplicação no modo de desenvolvimento.\
+Acesse [http://localhost:4200] para visualizar a página no seu browser.
 
-## Further help
+# Se deseja ver o projeto em deply acesse
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+https://country-challenge-seven.vercel.app/home
