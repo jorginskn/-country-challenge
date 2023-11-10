@@ -24,7 +24,12 @@
         </div>
         <div class=" ">
           <div class="font-bold text-lg text-violet-50">Region :{{data.region}}</div>
-          <div class="font-bold text-lg text-violet-50">Languages: {{data.languages.eng}}</div>
+          <div class="font-bold text-lg text-violet-50">Languages: {{data.languages.eng ? data.languages.eng :
+           data.languages.zho ? data.languages.zho :
+           data.languages.fra ? data.languages.fra :
+           data.languages.por ? data.languages.por :
+           data.languages.spa ? data.languages.spa :
+           data.languages.por }}</div>
         </div>
         <div class=" ">
           <div class="font-bold text-lg text-violet-50">Sub-region :{{data.subregion}}</div>
